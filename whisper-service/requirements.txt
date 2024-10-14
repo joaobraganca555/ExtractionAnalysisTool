@@ -1,0 +1,5 @@
+openai-whisper
+boto3
+pika
+requests
+python-dotenv

@@ -1,0 +1,6 @@
+torch
+ultralytics
+boto3
+pika
+requests
+python-dotenv

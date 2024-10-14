@@ -1,0 +1,8 @@
+easyocr
+pika
+boto3
+torch
+opencv-python-headless
+python-dotenv
+numpy
+requests
