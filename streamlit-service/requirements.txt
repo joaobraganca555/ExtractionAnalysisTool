@@ -1,0 +1,5 @@
+streamlit
+streamlit-vis-timeline
+requests
+moviepy
+python-dotenv

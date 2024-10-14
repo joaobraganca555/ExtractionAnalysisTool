@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+boto3
+opencv-python-headless
+python-multipart
+requests
+pika
+python-dotenv
+requests
+moviepy

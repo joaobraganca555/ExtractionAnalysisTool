@@ -1,0 +1,7 @@
+pika
+boto3
+transformers
+torch
+numpy
+requests
+python-dotenv

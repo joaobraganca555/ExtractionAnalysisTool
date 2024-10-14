@@ -1,0 +1,168 @@
+version: '3.8'
+
+services:
+  upload-service:
+    build: ./upload-service
+    ports:
+      - "5001:5000"
+    env_file:
+      - .env
+    depends_on:
+      - rabbitmq
+    networks:
+      - app_network
+
+  whisper-service:
+    build: ./whisper-service
+    ports:
+      - "5002:5002"
+    env_file:
+      - .env
+    depends_on:
+      - rabbitmq
+    networks:
+      - app_network
+
+  yolo-service:
+    build: ./yolo-service
+    ports:
+      - "5003:5003"
+    env_file:
+      - .env
+    depends_on:
+      - rabbitmq
+    networks:
+      - app_network
+
+  yolo-cls-service:
+    build: ./yolo-cls-service
+    ports:
+      - "5008:5008"
+    env_file:
+      - .env
+    depends_on:
+      - rabbitmq
+    networks:
+      - app_network   
+
+  yolo-logo-service:
+    build: ./yolo-logo-service
+    ports:
+      - "5009:5009"
+    env_file:
+      - .env
+    depends_on:
+      - rabbitmq
+    networks:
+      - app_network   
+  
+  ocr-service:
+    build: ./ocr-service
+    ports:
+      - "5004:5004"
+    env_file:
+      - .env
+    depends_on:
+      - rabbitmq
+    networks:
+      - app_network
+
+  coordinator-service:
+    build: ./coordinator-service
+    ports:
+      - "5005:5005"
+    depends_on:
+      - rabbitmq
+    networks:
+      - app_network
+  
+  sentiment-service:
+    build: ./sentiment-service
+    ports:
+      - "5006:5006"
+    depends_on:
+      - rabbitmq
+    networks:
+      - app_network
+    
+  result-service:
+    build: ./result-service
+    ports:
+      - "5007:5007"
+    env_file:
+      - .env
+    depends_on:
+      - mongodb
+    networks:
+      - app_network
+
+  streamlit-service:
+    build: ./streamlit-service
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
+    depends_on:
+      - result-service
+    networks:
+      - app_network
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    env_file:
+      - .env
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
+    networks:
+      - app_network
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"  # Expose MongoDB on port 27018 to avoid conflicts
+    volumes:
+      - mongodb_data:/data/db/
+      - mongodb_log:/var/log/mongodb/
+    env_file:
+      - .env
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+    networks:
+      - app_network
+  
+  # mongo-express:
+  #   image: mongo-express:latest
+  #   ports:
+  #     - "8081:8081"
+  #   env_file:
+  #     - .env
+  #   environment:
+  #     ME_CONFIG_MONGODB_ADMINUSERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+  #     ME_CONFIG_MONGODB_ADMINPASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+  #     ME_CONFIG_MONGODB_PORT: ${ME_CONFIG_MONGODB_PORT}
+  #     ME_CONFIG_MONGODB_SERVER: ${ME_CONFIG_MONGODB_SERVER}
+  #     ME_CONFIG_BASICAUTH_USERNAME: ${ME_CONFIG_BASICAUTH_USERNAME}
+  #     ME_CONFIG_BASICAUTH_PASSWORD: ${ME_CONFIG_BASICAUTH_PASSWORD}
+  #   depends_on:
+  #     - mongodb
+  #   restart: always  # Restart in case MongoDB isn't ready on the first try
+  #   networks:
+  #     - app_network
+
+volumes:
+  mongodb_data:
+    driver: local
+    name: mongo_data
+  mongodb_log:
+    driver: local
+    name: mongo_log
+
+networks:
+  app_network:
+    driver: bridge
