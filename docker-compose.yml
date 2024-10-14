@@ -11,6 +11,7 @@ services:
       - rabbitmq
     networks:
       - app_network
+    restart: always
 
   whisper-service:
     build: ./whisper-service
@@ -22,6 +23,7 @@ services:
       - rabbitmq
     networks:
       - app_network
+    restart: always
 
   yolo-service:
     build: ./yolo-service
@@ -33,6 +35,7 @@ services:
       - rabbitmq
     networks:
       - app_network
+    restart: always
 
   yolo-cls-service:
     build: ./yolo-cls-service
@@ -44,6 +47,7 @@ services:
       - rabbitmq
     networks:
       - app_network   
+    restart: always
 
   yolo-logo-service:
     build: ./yolo-logo-service
@@ -54,7 +58,8 @@ services:
     depends_on:
       - rabbitmq
     networks:
-      - app_network   
+      - app_network
+    restart: always
   
   ocr-service:
     build: ./ocr-service
@@ -66,6 +71,7 @@ services:
       - rabbitmq
     networks:
       - app_network
+    restart: always
 
   coordinator-service:
     build: ./coordinator-service
@@ -75,6 +81,7 @@ services:
       - rabbitmq
     networks:
       - app_network
+    restart: always
   
   sentiment-service:
     build: ./sentiment-service
@@ -84,6 +91,7 @@ services:
       - rabbitmq
     networks:
       - app_network
+    restart: always
     
   result-service:
     build: ./result-service
@@ -106,6 +114,7 @@ services:
       - result-service
     networks:
       - app_network
+    restart: always
 
   rabbitmq:
     image: rabbitmq:3-management
@@ -119,6 +128,7 @@ services:
       RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
     networks:
       - app_network
+    restart: always
 
   mongodb:
     image: mongo:latest
@@ -135,7 +145,9 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
     networks:
       - app_network
+    restart: always
   
+  # MONGO EXPRESS INTERFACE IF NEEDED
   # mongo-express:
   #   image: mongo-express:latest
   #   ports:
