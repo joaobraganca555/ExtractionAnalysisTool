@@ -3,7 +3,7 @@ Cloud-based tool for multimedia data extraction and analysis, focusing on influe
 
 ## System Architecture & Services Description
 
-![systemArchitecture](/docs/architecture.pdf)
+![systemArchitecture](/docs/architecture.png)
 
 
 | **Service**                | **Functionality**                                  | **Task**                                                   |
