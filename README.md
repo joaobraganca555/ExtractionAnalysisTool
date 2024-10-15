@@ -4,3 +4,17 @@ Cloud-based tool for multimedia data extraction and analysis, focusing on influe
 ## Sequence Diagram
 
 The sequence diagram can be found [here](sequenceDiagram.md).
+
+## Services Description
+
+| **Service**                | **Functionality**                                  | **Task**                                                   |
+|----------------------------|---------------------------------------------------|------------------------------------------------------------|
+| yolo-service                | Object Detection                                  | Detect objects in images and video frames                  |
+| yolo-cls-service            | Image Classification                              | Classify images into categories                            |
+| yolo-logo-service           | Logo Detection                                    | Detect specific logos in media                             |
+| whisper-service             | Speech Recognition                                | Convert audio to text                                      |
+| ocr-service                 | Optical Character Recognition                     | Extract text from images and video frames                  |
+| sentiment-service           | Sentiment Analysis                                | Analyse the sentiment of extracted text                    |
+| upload-service              | Upload Files                                      | API for uploading files and trigger coordinator            |
+| coordinator-service         | Manage services                                   | Controls and manage services                               |
+| result-service              | Stores Data                                       | API for storing service results                            |
