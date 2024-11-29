@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 import requests
 import pandas as pd
 import tempfile
-from moviepy.editor import VideoFileClip
+from moviepy import VideoFileClip
 from io import BytesIO
 import os
 import html

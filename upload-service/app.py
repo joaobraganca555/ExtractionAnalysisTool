@@ -10,7 +10,7 @@ import pika  # Import for RabbitMQ interaction
 import json
 from dotenv import load_dotenv
 import requests
-from moviepy.editor import VideoFileClip
+from moviepy import VideoFileClip
 
 # Initialize FastAPI app
 app = FastAPI()
