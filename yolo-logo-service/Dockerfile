@@ -21,7 +21,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Download the YOLO model from AWS S3
-RUN wget https://data-extraction-file-storage-thesis.s3.eu-north-1.amazonaws.com/yolo-logo-models/yolov8x_logo_v1.pt -O /app/yolov8x_logo_v1.pt
+RUN wget https://data-extraction-file-storage-thesis.s3.eu-north-1.amazonaws.com/yolo-logo-models/yolov8x_logo_v2.pt -O /app/yolov8x_logo_v2.pt
 
 # Copy the current directory contents into the container at /app
 COPY . .

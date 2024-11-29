@@ -14,7 +14,7 @@ load_dotenv()
 RABBITMQ_DEFAULT_USER = os.getenv("RABBITMQ_DEFAULT_USER", "user")
 RABBITMQ_DEFAULT_PASS = os.getenv("RABBITMQ_DEFAULT_PASS", "password")
 # Update YOLO_MODEL to load 'best.pt' located in the same directory
-YOLO_MODEL = os.path.join(os.path.dirname(__file__), "yolov8x_logo_v1.pt")
+YOLO_MODEL = os.path.join(os.path.dirname(__file__), "yolov8x_logo_v2.pt")
 BUCKET_NAME = os.getenv("BUCKET_NAME", "data-extraction-file-storage-thesis")
 RESULT_SERVICE_URL = os.getenv("RESULT_SERVICE_URL", "http://result-service:5007")
 
