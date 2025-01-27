@@ -20,7 +20,8 @@ Cloud-based tool for multimedia data extraction and analysis, focusing on influe
 
 ## Application Video
 
-Watch the demo of the application in action: [Video Link](https://github.com/user-attachments/assets/c564dffb-e532-435d-ac4a-fcef40f3129f)
+Watch the demo of the application in action:
+https://github.com/user-attachments/assets/c564dffb-e532-435d-ac4a-fcef40f3129f
 
 ## How to Run the Application
 
