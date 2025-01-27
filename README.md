@@ -21,3 +21,9 @@ Cloud-based tool for multimedia data extraction and analysis, focusing on influe
 ## Sequence Diagram
 
 The sequence diagram can be found [here](docs/sequenceDiagram.md).
+
+
+## Application Video
+
+https://github.com/user-attachments/assets/c564dffb-e532-435d-ac4a-fcef40f3129f
+
