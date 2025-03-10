@@ -51,3 +51,12 @@ To run the **ExtractionAnalysisTool** locally, follow these steps:
    ```bash
    docker-compose up
 5. Once the containers are up, the tool will be running, and you can start interacting with it. Use the ports provided the docker compose file.
+
+## Publications  
+
+This tool is based on prior research work published in the following articles:  
+
+| **Title** | **Conference** | **Publisher** | **Date** | **Pages** | **Link** |
+|-----------|--------------|--------------|----------|----------|----------|
+| Unveiling the Secrets: In-Depth Analysis of YouTube Video Data and Metadata Extraction | ISAmI 2024 – 15th International Symposium on Ambient Intelligence | Springer Nature | 27 Feb 2025 | pp. 14–24 | [Springer Link](https://link.springer.com/chapter/10.1007/978-3-031-83117-1_2) |
+| Unveiling the Secrets: In-Depth Analysis of YouTube Video Data and Metadata Extraction | ISAmI 2024 – 15th International Symposium on Ambient Intelligence | Springer Nature | 27 Feb 2025 | pp. 287–296 | [Springer Link](https://link.springer.com/chapter/10.1007/978-3-031-83117-1_27) |
